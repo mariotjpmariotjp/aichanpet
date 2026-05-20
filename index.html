@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="埼玉県入間市・所沢市・狭山市・飯能市のペットシッター「あいちゃんペット」。創業2013年、愛情たっぷり、家族のように大切にお世話いたします。ペットシッター・ペットタクシー・トリミング対応。">
+<title>あいちゃんペット | 埼玉県入間市のペットシッター・ペットタクシー・トリミング</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    /* Pink-based palette for あいちゃんペット */
+    --pink: #FF8FB3;          /* main brand pink */
+    --pink-deep: #E91E63;     /* deep pink accent */
+    --pink-light: #FFE4EC;    /* very light pink */
+    --black: #1a1a1a;
+    --gray-text: #4a4a4a;
+    --beige: #FCE4EC;         /* pinkish soft card bg */
+    --beige-dark: #F8BBD0;
+    --white: #ffffff;
+    --soft: #FFF5F8;          /* near-white pink */
+    /* Aliases kept so existing var(--yellow*) refs still work */
+    --yellow: var(--pink);
+    --yellow-deep: var(--pink-deep);
+    --yellow-light: var(--pink-light);
+  }
+  body {
+    font-family: "M PLUS Rounded 1c", -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+    color: var(--black); line-height: 1.7; background: var(--white);
+    overflow-x: hidden; font-weight: 500;
+  }
+  .maru { font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--yellow);
+    transition: all 0.3s;
+  }
+  .nav.scrolled { background: var(--yellow); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto; padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 900;
+    font-size: 22px; color: var(--black);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .logo svg { width: 32px; height: 32px; }
+  .nav-links { display: flex; gap: 28px; font-size: 14px; font-weight: 700; }
+  .nav-links a { color: var(--black); }
+  .nav-links a:hover { color: var(--yellow-deep); }
+  .nav-cta {
+    background: var(--black); color: var(--yellow); padding: 9px 20px;
+    border-radius: 30px; font-weight: 800; font-size: 13px;
+  }
+  .hamburger { display: none; background: none; border: none; font-size: 26px; cursor: pointer; }
+  @media (max-width: 768px) {
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0;
+                  background: var(--yellow); flex-direction: column; padding: 20px 24px; gap: 16px;
+                  box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+    .nav-links.open { display: flex; }
+    .hamburger { display: block; }
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh; background: var(--yellow);
+    padding: 100px 24px 60px; position: relative; overflow: hidden;
+    display: flex; align-items: center;
+  }
+  .hero-paw-l, .hero-paw-r {
+    position: absolute; width: 30vw; max-width: 360px; opacity: 1;
+  }
+  .hero-paw-l { left: -3vw; bottom: 0; }
+  .hero-paw-r { right: -3vw; top: 60px; transform: scaleX(-1); }
+  @media (max-width: 768px) {
+    .hero-paw-l { width: 40vw; left: -8vw; bottom: -20px; }
+    .hero-paw-r { width: 40vw; right: -8vw; top: 50px; }
+  }
+  .hero-content {
+    max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-block; background: var(--black); color: var(--yellow);
+    padding: 6px 16px; border-radius: 30px;
+    font-size: 12px; font-weight: 800; letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: clamp(36px, 8vw, 80px); font-weight: 900;
+    line-height: 1.25; margin-bottom: 18px; color: var(--black);
+    letter-spacing: -0.02em;
+  }
+  .hero h1 .accent {
+    display: inline-block; position: relative;
+  }
+  .hero h1 .accent::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 8px;
+    height: 16px; background: var(--white); z-index: -1; border-radius: 12px;
+  }
+  .hero-sub-en {
+    font-family: "M PLUS Rounded 1c", sans-serif; font-weight: 500;
+    font-size: clamp(14px, 2vw, 18px); color: var(--black);
+    margin-bottom: 40px; letter-spacing: 0.05em;
+  }
+  .hero-ctas {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  }
+  .btn-pill {
+    background: var(--white); color: var(--black); padding: 18px 40px;
+    border-radius: 60px; font-weight: 800; font-size: 16px;
+    border: 3px solid var(--white); transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px; min-width: 240px;
+    justify-content: center;
+  }
+  .btn-pill:hover { background: transparent; color: var(--white); }
+  .btn-pill.dark {
+    background: var(--black); border-color: var(--black); color: var(--yellow);
+  }
+  .btn-pill.dark:hover { background: transparent; color: var(--black); }
+
+  /* Section common */
+  section { padding: 100px 0; }
+  @media (max-width: 768px) { section { padding: 70px 0; } }
+  .section-headline {
+    text-align: center; margin-bottom: 60px;
+  }
+  .section-headline h2 {
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 900;
+    font-size: clamp(28px, 5vw, 48px); line-height: 1.35;
+    color: var(--black); margin-bottom: 10px;
+  }
+  .section-headline .en {
+    font-size: 12px; color: var(--yellow-deep); font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Concerns */
+  .concerns { background: var(--soft); }
+  .concerns-top {
+    text-align: center; font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 900; font-size: clamp(22px, 4vw, 36px); line-height: 1.7;
+    margin-bottom: 50px;
+  }
+  .concerns-top span { background: linear-gradient(transparent 60%, var(--yellow) 60%); padding: 0 4px; }
+
+  /* Why card grid */
+  .why { background: var(--white); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+  @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card {
+    background: var(--beige); padding: 36px 32px;
+    border-radius: 24px; text-align: left;
+    position: relative; transition: transform 0.2s;
+  }
+  .why-card:hover { transform: translateY(-4px); }
+  .why-card .illust {
+    width: 100%; aspect-ratio: 5/4; background: var(--white);
+    border-radius: 18px; margin-bottom: 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 90px; line-height: 1;
+  }
+  .why-card h3 {
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 900;
+    font-size: 20px; margin-bottom: 10px;
+  }
+  .why-card p { color: var(--gray-text); font-size: 14px; line-height: 1.85; }
+
+  /* About */
+  .about { background: var(--yellow-light); padding: 100px 0; }
+  .about-wrap {
+    max-width: 1000px; margin: 0 auto; padding: 0 24px;
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center;
+  }
+  @media (max-width: 768px) { .about-wrap { grid-template-columns: 1fr; gap: 36px; } }
+  .about-illust {
+    aspect-ratio: 4/5; background: var(--white); border-radius: 30px;
+    display: flex; align-items: center; justify-content: center; font-size: 130px;
+    position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .about-text h2 {
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 900;
+    font-size: clamp(24px, 4vw, 36px); margin-bottom: 18px; line-height: 1.4;
+  }
+  .about-text p { margin-bottom: 16px; line-height: 2; color: var(--gray-text); }
+  .about-text .lead { color: var(--black); font-weight: 700; font-size: 17px; }
+  .qual-row {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px;
+  }
+  .qual-pill {
+    background: var(--black); color: var(--yellow); padding: 6px 14px;
+    border-radius: 16px; font-size: 12px; font-weight: 700;
+  }
+
+  /* Service section */
+  .services { background: var(--white); }
+  .services-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card {
+    background: var(--beige); padding: 40px 32px; border-radius: 24px;
+    position: relative;
+  }
+  .service-card .label {
+    display: inline-block; background: var(--yellow); color: var(--black);
+    padding: 5px 14px; border-radius: 14px; font-size: 11px; font-weight: 800;
+    margin-bottom: 16px;
+  }
+  .service-card .label.pause { background: var(--gray-text); color: var(--white); }
+  .service-card .label.sub { background: var(--white); color: var(--black); border: 2px solid var(--black); }
+  .service-card .illust {
+    font-size: 80px; line-height: 1; margin-bottom: 18px;
+  }
+  .service-card h3 {
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 900;
+    font-size: 24px; margin-bottom: 12px;
+  }
+  .service-card p { color: var(--gray-text); margin-bottom: 18px; font-size: 14px; line-height: 1.9; }
+  .service-card ul { list-style: none; padding: 0; }
+  .service-card ul li {
+    padding: 6px 0; padding-left: 26px; position: relative; font-size: 14px;
+    color: var(--gray-text);
+  }
+  .service-card ul li::before {
+    content: "🐾"; position: absolute; left: 0; font-size: 13px;
+  }
+  .service-note {
+    background: var(--yellow-light); padding: 20px 24px;
+    border-radius: 16px; margin-top: 28px; font-size: 14px;
+    border-left: 4px solid var(--yellow-deep);
+  }
+  .service-note strong { color: var(--black); }
+
+  /* Quick Quote */
+  .quote { background: var(--yellow); padding: 100px 0; }
+  .quote-wrap {
+    background: var(--white); border-radius: 32px; padding: 40px;
+    max-width: 760px; margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  }
+  @media (max-width: 768px) { .quote-wrap { padding: 28px; } }
+  .quote-step { margin-bottom: 28px; }
+  .quote-step:last-of-type { margin-bottom: 0; }
+  .quote-label {
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 900;
+    font-size: 16px; color: var(--black); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .quote-label .num {
+    background: var(--yellow); color: var(--black);
+    width: 28px; height: 28px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+  }
+  .course-chips {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  }
+  @media (max-width: 600px) { .course-chips { grid-template-columns: 1fr; } }
+  .course-chip {
+    padding: 14px 10px; background: var(--soft); border: 3px solid transparent;
+    border-radius: 16px; text-align: center; cursor: pointer;
+    user-select: none; font-weight: 700; transition: all 0.15s;
+  }
+  .course-chip:hover { background: var(--beige); }
+  .course-chip.selected { background: var(--yellow); border-color: var(--black); }
+  .course-chip .big { display: block; font-size: 16px; font-weight: 900; margin-bottom: 2px; }
+  .course-chip .small { font-size: 11px; color: var(--gray-text); }
+  .course-chip.selected .small { color: var(--black); }
+  .pet-chips {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+  }
+  @media (max-width: 600px) { .pet-chips { grid-template-columns: repeat(3, 1fr); } }
+  .pet-chip {
+    padding: 16px 6px; background: var(--soft); border: 3px solid transparent;
+    border-radius: 16px; text-align: center; font-size: 12px; cursor: pointer;
+    user-select: none; font-weight: 700; transition: all 0.15s;
+  }
+  .pet-chip:hover { background: var(--beige); }
+  .pet-chip.selected { background: var(--yellow); border-color: var(--black); }
+  .pet-chip .emoji { font-size: 32px; display: block; margin-bottom: 4px; line-height: 1; }
+  .quote-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .quote-row input, .quote-row select {
+    padding: 14px 16px; border: 2px solid var(--beige-dark); border-radius: 12px;
+    font-size: 14px; font-family: inherit; background: var(--white); flex: 1;
+    min-width: 140px; font-weight: 600;
+  }
+  .visit-pick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .visit-chip {
+    padding: 18px; background: var(--soft); border: 3px solid transparent;
+    border-radius: 16px; text-align: center; cursor: pointer; user-select: none;
+    font-weight: 700; transition: all 0.15s;
+  }
+  .visit-chip:hover { background: var(--beige); }
+  .visit-chip.selected { background: var(--yellow); border-color: var(--black); }
+  .visit-chip .big { display: block; font-size: 22px; font-weight: 900; }
+  .quote-result {
+    background: var(--black); color: var(--yellow);
+    padding: 28px; border-radius: 20px; text-align: center; margin-top: 32px;
+  }
+  .quote-result .label { font-size: 12px; opacity: 0.9; font-weight: 700; letter-spacing: 0.1em; }
+  .quote-result .total {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: clamp(32px, 7vw, 48px); font-weight: 900;
+    line-height: 1; margin: 8px 0 14px;
+    transition: transform 0.15s;
+  }
+  .quote-result .total.flash { transform: scale(1.05); }
+  .quote-result-cta {
+    background: var(--yellow); color: var(--black); padding: 14px 32px;
+    border-radius: 30px; font-weight: 800; font-size: 14px;
+    display: inline-block; margin-top: 16px;
+  }
+  .quote-breakdown {
+    font-size: 11px; opacity: 0.85; line-height: 1.8;
+    margin-top: 8px; font-weight: 500;
+  }
+  .quote-disclaimer {
+    font-size: 11px; color: var(--gray-text); text-align: center;
+    margin-top: 18px; line-height: 1.8;
+  }
+
+  /* Pricing detail */
+  .pricing { background: var(--soft); }
+  .price-table-wrap { overflow-x: auto; margin-top: 24px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+  .price-tabs {
+    display: flex; gap: 8px; justify-content: center;
+    margin-bottom: 22px; flex-wrap: wrap;
+  }
+  .price-tab {
+    padding: 10px 20px; background: var(--white); border: 2px solid var(--black);
+    border-radius: 30px; font-weight: 800; font-size: 13px; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .price-tab.active { background: var(--black); color: var(--yellow); }
+  .price-table {
+    width: 100%; background: var(--white); border-radius: 20px;
+    overflow: hidden; border-collapse: collapse;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+  .price-table th, .price-table td {
+    padding: 16px 12px; text-align: center; font-size: 13px;
+    border-bottom: 1px solid var(--beige);
+  }
+  .price-table th {
+    background: var(--black); color: var(--yellow);
+    font-weight: 800; font-size: 12px;
+  }
+  .price-table td:first-child { text-align: left; font-weight: 800; padding-left: 18px; }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-table-card { display: none; }
+  .price-table-card.active { display: block; }
+
+  /* Process */
+  .process { background: var(--white); }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  @media (max-width: 768px) { .process-steps { grid-template-columns: 1fr 1fr; } }
+  .step { text-align: center; padding: 0 12px; }
+  .step-num {
+    width: 70px; height: 70px; background: var(--yellow);
+    border-radius: 50%; color: var(--black); font-size: 30px; font-weight: 900;
+    font-family: "Zen Maru Gothic", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+    box-shadow: 0 6px 0 var(--black);
+  }
+  .step h4 {
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 900;
+    font-size: 17px; margin-bottom: 8px;
+  }
+  .step p { font-size: 13px; color: var(--gray-text); line-height: 1.85; }
+
+  /* Area */
+  .area { background: var(--yellow-light); text-align: center; }
+  .area-list {
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+    margin: 30px auto 0; max-width: 800px;
+  }
+  .area-chip {
+    background: var(--white); padding: 12px 24px; border-radius: 30px;
+    font-weight: 800; box-shadow: 0 4px 0 var(--black);
+    border: 3px solid var(--black);
+  }
+  .area-note { margin-top: 24px; color: var(--gray-text); font-size: 13px; }
+
+  /* FAQ */
+  .faq { background: var(--white); }
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  .faq-item {
+    background: var(--soft); margin-bottom: 14px;
+    border-radius: 18px; padding: 24px 28px; cursor: pointer; transition: all 0.2s;
+  }
+  .faq-item:hover { background: var(--yellow-light); }
+  .faq-q {
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 900;
+    display: flex; align-items: center; gap: 14px; font-size: 16px;
+  }
+  .faq-q::before {
+    content: "Q"; background: var(--yellow); color: var(--black);
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; flex-shrink: 0; font-size: 16px;
+  }
+  .faq-q::after { content: "+"; margin-left: auto; font-size: 26px; }
+  .faq-item.open .faq-q::after { content: "−"; }
+  .faq-a {
+    margin-top: 14px; padding-left: 46px; color: var(--gray-text);
+    font-size: 14px; display: none; line-height: 2;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* Contact */
+  .contact {
+    background: var(--black); color: var(--white);
+    text-align: center; padding: 100px 0;
+  }
+  .contact .section-headline h2 { color: var(--white); }
+  .contact .section-headline .en { color: var(--yellow); }
+  .contact p { line-height: 2; color: rgba(255,255,255,0.85); }
+  .contact-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;
+  }
+  @media (max-width: 768px) { .contact-cards { grid-template-columns: 1fr; } }
+  .contact-card {
+    background: var(--white); padding: 32px 20px; border-radius: 20px;
+    text-align: center; color: var(--black);
+  }
+  .contact-card .icon { font-size: 40px; margin-bottom: 12px; }
+  .contact-card h4 {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 14px; margin-bottom: 8px; font-weight: 700;
+    color: var(--gray-text);
+  }
+  .contact-card .val { font-size: 18px; font-weight: 900; }
+  .contact-card a { color: var(--yellow-deep); }
+  .contact-sns {
+    display: flex; gap: 20px; justify-content: center;
+    margin-top: 36px; flex-wrap: wrap;
+  }
+  .sns-chip {
+    background: var(--white); color: var(--black); padding: 10px 20px;
+    border-radius: 30px; font-weight: 800; font-size: 13px;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--black); color: rgba(255,255,255,0.7);
+    padding: 40px 24px 30px; text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  footer .logo { color: var(--yellow); margin-bottom: 14px; justify-content: center; }
+  footer p { font-size: 13px; }
+  footer .footer-links {
+    display: flex; gap: 22px; justify-content: center;
+    margin: 18px 0; font-size: 13px; flex-wrap: wrap;
+  }
+  footer .footer-links a { color: var(--white); opacity: 0.7; }
+  footer .copyright { margin-top: 16px; opacity: 0.5; font-size: 11px; line-height: 1.8; }
+  footer .biz-info {
+    margin-top: 20px; padding: 16px;
+    background: rgba(255,255,255,0.06); border-radius: 12px;
+    font-size: 11px; line-height: 1.9; max-width: 760px;
+    margin-left: auto; margin-right: auto; color: rgba(255,255,255,0.7);
+  }
+
+  /* Animations */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="11" r="3"/><circle cx="16" cy="8" r="3"/><circle cx="24" cy="11" r="3"/><circle cx="6" cy="20" r="2.5"/><circle cx="26" cy="20" r="2.5"/><ellipse cx="16" cy="22" rx="7" ry="6"/></svg>
+      あいちゃんペット
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">私たちについて</a>
+      <a href="#services">サービス</a>
+      <a href="#quote">見積もり</a>
+      <a href="#area">対応エリア</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">お問合せ</a>
+    </div>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">≡</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header id="top" class="hero">
+  <!-- Left paw -->
+  <svg class="hero-paw-l" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="100" cy="130" rx="80" ry="65" fill="#1a1a1a"/>
+    <circle cx="40" cy="70" r="22" fill="#1a1a1a"/>
+    <circle cx="80" cy="50" r="22" fill="#1a1a1a"/>
+    <circle cx="120" cy="50" r="22" fill="#1a1a1a"/>
+    <circle cx="160" cy="70" r="22" fill="#1a1a1a"/>
+    <ellipse cx="100" cy="135" rx="32" ry="22" fill="#FFFFFF"/>
+    <ellipse cx="55" cy="115" rx="11" ry="13" fill="#FFFFFF"/>
+    <ellipse cx="145" cy="115" rx="11" ry="13" fill="#FFFFFF"/>
+    <ellipse cx="75" cy="95" rx="10" ry="12" fill="#FFFFFF"/>
+    <ellipse cx="125" cy="95" rx="10" ry="12" fill="#FFFFFF"/>
+  </svg>
+  <!-- Right paw -->
+  <svg class="hero-paw-r" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="100" cy="130" rx="80" ry="65" fill="#1a1a1a"/>
+    <circle cx="40" cy="70" r="22" fill="#1a1a1a"/>
+    <circle cx="80" cy="50" r="22" fill="#1a1a1a"/>
+    <circle cx="120" cy="50" r="22" fill="#1a1a1a"/>
+    <circle cx="160" cy="70" r="22" fill="#1a1a1a"/>
+    <ellipse cx="100" cy="135" rx="32" ry="22" fill="#FFFFFF"/>
+    <ellipse cx="55" cy="115" rx="11" ry="13" fill="#FFFFFF"/>
+    <ellipse cx="145" cy="115" rx="11" ry="13" fill="#FFFFFF"/>
+    <ellipse cx="75" cy="95" rx="10" ry="12" fill="#FFFFFF"/>
+    <ellipse cx="125" cy="95" rx="10" ry="12" fill="#FFFFFF"/>
+  </svg>
+
+  <div class="hero-content">
+    <span class="hero-badge">創業2013年 / 13年の信頼</span>
+    <h1 class="maru">
+      愛情たっぷり、<br>
+      <span class="accent">家族のように</span>。
+    </h1>
+    <p class="hero-sub-en">Aichan Pet — Caring sitter in Iruma, Saitama.</p>
+    <div class="hero-ctas">
+      <a href="#quote" class="btn-pill dark">💰 まずは見積もり</a>
+      <a href="#contact" class="btn-pill">💬 LINEで相談</a>
+    </div>
+  </div>
+</header>
+
+<!-- Concerns -->
+<section class="concerns">
+  <div class="container">
+    <div class="concerns-top">
+      旅行・出張・急病で、<br>
+      <span>ペットちゃんが心配…</span><br>
+      そんなお悩みを、あいちゃんペットが解決します。
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="why">
+  <div class="container">
+    <div class="section-headline">
+      <div class="en">WHY AICHAN PET</div>
+      <h2>選ばれる<br>3つの理由。</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="illust">🏅</div>
+        <h3>13年の信頼と<br>地域実績</h3>
+        <p>2013年創業。動物取扱業登録(保管・訓練)を取得し、入間市・所沢・狭山・飯能エリアで多くのご家庭にご利用いただいております。</p>
+      </div>
+      <div class="why-card">
+        <div class="illust">🐾</div>
+        <h3>1つの窓口で<br>ぜんぶおまかせ</h3>
+        <p>シッター・タクシー・トリミングを自社で対応。動物病院への送迎やトリミング後のお預かりまで、ワンストップでサポートします。</p>
+      </div>
+      <div class="why-card">
+        <div class="illust">📸</div>
+        <h3>1枚レポートと<br>LINE即時報告</h3>
+        <p>毎回の訪問内容を写真付き「1枚レポート」でご報告。LINEでリアルタイムにお伝えするので、外出先でも安心です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="about">
+  <div class="about-wrap">
+    <div class="about-illust">👩‍🦰</div>
+    <div class="about-text">
+      <h2 class="maru">はじめまして、<br>金田瑠璃子です🐾</h2>
+      <p class="lead">2013年の創業以来、入間市・所沢・狭山を中心に、ご家庭のペットちゃんが「いつもどおり」過ごせるよう、愛情を込めてお世話してまいりました。</p>
+      <p>動物取扱業の登録(保管・訓練)を取得し、賠償責任保険にも加入。ペットシッター・ペットタクシー・トリミングをワンストップでご提供できる体制を整えております。</p>
+      <p>飼い主様の旅行・出張・ご入院などの大切な時間を安心してお過ごしいただけるよう、心を込めて大切なペットのお世話をいたします。</p>
+      <div class="qual-row">
+        <span class="qual-pill">🏢 動物取扱業(保管)登録</span>
+        <span class="qual-pill">🎓 動物取扱業(訓練)登録</span>
+        <span class="qual-pill">🛡 賠償責任保険加入</span>
+        <span class="qual-pill">📅 創業2013年</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-headline">
+      <div class="en">SERVICES</div>
+      <h2>ご家族にぴったりの、<br>4つのサービス。</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="label">メインサービス</span>
+        <div class="illust">🏠</div>
+        <h3>ペットシッター</h3>
+        <p>飼い主様のご自宅にお伺いし、ペットちゃんが慣れた環境のままお世話いたします。3つのコースからお選びいただけます。</p>
+        <ul>
+          <li>ご飯・お水・トイレ掃除</li>
+          <li>お散歩・遊び・ブラッシング</li>
+          <li>体調チェック・写真付き報告</li>
+          <li>お薬投与(要事前相談)</li>
+          <li>泊まり込み対応も可能</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="label sub">対応中</span>
+        <div class="illust">🚗</div>
+        <h3>ペットタクシー</h3>
+        <p>動物病院・トリミングサロン・空港等への送迎サービス。かかりつけ病院への通院もおまかせください。</p>
+        <ul>
+          <li>かかりつけ病院への通院</li>
+          <li>トリミングサロン送迎</li>
+          <li>飼い主様同乗OK</li>
+          <li>1km×100円 / 高速代別途</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="label sub">対応中</span>
+        <div class="illust">✂️</div>
+        <h3>トリミング</h3>
+        <p>シャンプー・カット・爪切り・耳掃除など、ワンちゃん・ネコちゃんの美容をご提供。タクシー送迎との組み合わせも可能です。</p>
+        <ul>
+          <li>シャンプー・コンディショニング</li>
+          <li>カット・爪切り・耳掃除</li>
+          <li>肛門腺絞り</li>
+          <li>送迎付きプランあり</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="label pause">新規受付休止中</span>
+        <div class="illust">🛏</div>
+        <h3>プレミアムペットホテル</h3>
+        <p>飼い主様の旅行・ご出張中の長期お預かり(プレミアムプラン)。現在、新規ご予約の受付を一時休止しております。</p>
+        <ul>
+          <li>少数限定の貸切型</li>
+          <li>既存ご利用者様のみ予約可</li>
+          <li>再開予定はLINEでお知らせ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-note">
+      <strong>※ ペットシッターは「ショート(30分)」「基本(1時間)」「お散歩代行(30分)」</strong> の3コースをご用意。下記の見積もりフォームでその場で料金がわかります。
+    </div>
+  </div>
+</section>
+
+<!-- Quick Quote -->
+<section id="quote" class="quote">
+  <div class="container">
+    <div class="section-headline">
+      <div class="en" style="color: var(--black);">QUICK QUOTE</div>
+      <h2>その場で、料金がわかる。</h2>
+    </div>
+
+    <div class="quote-wrap">
+      <div class="quote-step">
+        <div class="quote-label"><span class="num">1</span>コースをお選びください</div>
+        <div class="course-chips" id="courseChips">
+          <div class="course-chip" data-course="short"><span class="big">ショート</span><span class="small">1回30分</span></div>
+          <div class="course-chip selected" data-course="basic"><span class="big">基本</span><span class="small">1回1時間</span></div>
+          <div class="course-chip" data-course="walk"><span class="big">お散歩代行</span><span class="small">1回30分</span></div>
+        </div>
+      </div>
+
+      <div class="quote-step">
+        <div class="quote-label"><span class="num">2</span>ペットの種類</div>
+        <div class="pet-chips" id="petChips">
+          <div class="pet-chip" data-pet="small_dog"><span class="emoji">🐕</span>小型犬</div>
+          <div class="pet-chip selected" data-pet="medium_dog"><span class="emoji">🐕</span>中型犬</div>
+          <div class="pet-chip" data-pet="large_dog"><span class="emoji">🐕</span>大型犬</div>
+          <div class="pet-chip" data-pet="cat"><span class="emoji">🐈</span>猫(2匹まで)</div>
+          <div class="pet-chip" data-pet="small_animal"><span class="emoji">🐹</span>小動物</div>
+        </div>
+      </div>
+
+      <div class="quote-step">
+        <div class="quote-label"><span class="num">3</span>ご利用期間</div>
+        <div class="quote-row">
+          <input type="date" id="qStart">
+          <span>〜</span>
+          <input type="date" id="qEnd">
+        </div>
+      </div>
+
+      <div class="quote-step">
+        <div class="quote-label"><span class="num">4</span>1日の訪問回数</div>
+        <div class="visit-pick" id="visitPick">
+          <div class="visit-chip selected" data-visits="1"><span class="big">1回</span>1日1回</div>
+          <div class="visit-chip" data-visits="2"><span class="big">2回</span>朝・夕</div>
+        </div>
+      </div>
+
+      <div class="quote-step">
+        <div class="quote-label"><span class="num">5</span>オプション</div>
+        <div class="quote-row" style="gap: 12px;">
+          <label style="flex: 1; min-width: 130px; display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; font-weight: 600;">
+            <input type="checkbox" id="qPeak"> 繁忙期 (+10%)
+          </label>
+          <label style="flex: 1; min-width: 130px; display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; font-weight: 600;">
+            <input type="checkbox" id="qFirst" checked> 初回 (+¥1,200)
+          </label>
+          <input type="number" id="qDistance" min="0" max="50" step="1" value="5" style="max-width:130px;" placeholder="距離km">
+        </div>
+      </div>
+
+      <div class="quote-result">
+        <div class="label">YOUR PRICE</div>
+        <div class="total" id="qTotal">¥0</div>
+        <div class="quote-breakdown" id="qBreakdown"></div>
+        <a href="#contact" class="quote-result-cta">この内容でLINE相談 →</a>
+      </div>
+      <div class="quote-disclaimer">
+        ※ 表示はあくまで目安料金です。実際の料金は事前打合せ時に確定いたします。<br>
+        ※ 初回登録料 ¥1,200 / 交通費 1km×往復×¥100 / 繁忙期(年末年始・GW・夏季) +10%
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="pricing">
+  <div class="container">
+    <div class="section-headline">
+      <div class="en">PRICE LIST</div>
+      <h2>詳細料金表</h2>
+    </div>
+
+    <div class="price-tabs">
+      <div class="price-tab active" data-tbl="short">ショート(30分)</div>
+      <div class="price-tab" data-tbl="basic">基本(1時間)</div>
+      <div class="price-tab" data-tbl="walk">お散歩代行(30分)</div>
+    </div>
+
+    <div class="price-table-wrap">
+      <!-- Short -->
+      <div class="price-table-card active" data-tbl="short">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>ペットの種類</th>
+              <th>1日1回 基本</th>
+              <th>1日1回 追加</th>
+              <th>1日2回 基本</th>
+              <th>1日2回 追加</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>🐕 小型犬 1匹</td><td>¥2,500</td><td>¥1,200</td><td>¥4,400</td><td>¥1,200</td></tr>
+            <tr><td>🐈 猫 2匹まで</td><td>¥2,500</td><td>—</td><td>¥4,400</td><td>—</td></tr>
+            <tr><td>🐹 小動物 1匹(1ケージ)</td><td>¥2,500</td><td>—</td><td>¥4,400</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Basic -->
+      <div class="price-table-card" data-tbl="basic">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>ペットの種類</th>
+              <th>1日1回 基本</th>
+              <th>1日1回 追加</th>
+              <th>1日2回 基本</th>
+              <th>1日2回 追加</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>🐕 小型犬 1匹</td><td>¥3,300</td><td>¥1,650</td><td>¥5,500</td><td>¥3,000</td></tr>
+            <tr><td>🐕 中型犬 1匹</td><td>¥3,850</td><td>¥2,200</td><td>¥6,000</td><td>¥4,000</td></tr>
+            <tr><td>🐕 大型犬 1匹</td><td>¥4,400</td><td>¥2,750</td><td>¥8,000</td><td>¥5,000</td></tr>
+            <tr><td>🐈 猫 2匹まで</td><td>¥3,300</td><td>¥660</td><td>¥5,500</td><td>¥1,200</td></tr>
+            <tr><td>🐹 小動物 1匹(1ケージ)</td><td>¥3,300</td><td>¥660</td><td>¥5,500</td><td>¥1,200</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Walk -->
+      <div class="price-table-card" data-tbl="walk">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>ペットの種類</th>
+              <th>1日1回 基本</th>
+              <th>1日1回 追加</th>
+              <th>1日2回 基本</th>
+              <th>1日2回 追加</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>🐕 小型犬 1匹</td><td>¥1,980</td><td>¥770</td><td>¥3,300</td><td>¥1,430</td></tr>
+            <tr><td>🐕 中型犬 1匹</td><td>¥2,200</td><td>¥1,200</td><td>¥4,070</td><td>¥1,980</td></tr>
+            <tr><td>🐕 大型犬 1匹</td><td>¥2,500</td><td>—</td><td>¥4,400</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top: 22px; font-size: 13px; color: var(--gray-text); line-height: 2; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <strong>初回登録料:</strong> ¥1,200 / <strong>交通費:</strong> 1km × 往復 × ¥100 (高速代別途)<br>
+      <strong>繁忙期:</strong> 年末年始・GW・夏季 1割増 / <strong>キャンセル料:</strong> 2日前20% / 前日30% / 当日100%<br>
+      <strong>お支払い:</strong> 基本前払い・キャッシュレス(クレジット・電子マネー)対応 / <strong>回数券:</strong> 10回分で11回ご利用可能
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="container">
+    <div class="section-headline">
+      <div class="en">HOW IT WORKS</div>
+      <h2>かんたん4ステップ。</h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>お問合せ</h4>
+        <p>LINE・お電話・メールで気軽にご相談</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>事前打合せ</h4>
+        <p>ご自宅訪問でペットちゃんとご面談(無料)</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>お見積もり</h4>
+        <p>料金・スケジュールを書面で提示</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>サービス実施</h4>
+        <p>毎回の訪問を写真付き1枚レポートでご報告</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Area -->
+<section id="area" class="area">
+  <div class="container">
+    <div class="section-headline">
+      <div class="en" style="color: var(--yellow-deep);">SERVICE AREA</div>
+      <h2>入間・所沢・狭山・飯能を中心に。</h2>
+    </div>
+
+    <div class="area-list">
+      <span class="area-chip">入間市</span>
+      <span class="area-chip">所沢市</span>
+      <span class="area-chip">狭山市</span>
+      <span class="area-chip">飯能市</span>
+      <span class="area-chip">青梅市</span>
+      <span class="area-chip">川越市</span>
+      <span class="area-chip">日高市</span>
+      <span class="area-chip">三芳町</span>
+      <span class="area-chip">坂戸市</span>
+      <span class="area-chip">鶴ヶ島市</span>
+    </div>
+    <p class="area-note">※ 距離により交通費が発生します。エリア外もご相談ください</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="section-headline">
+      <div class="en">FAQ</div>
+      <h2>よくあるご質問</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">鍵は預ける必要がありますか？</div>
+        <div class="faq-a">はい、サービス実施日のお預かりが必要です。お預かりの際は「鍵預り証」を発行し、ご返却の際は「鍵返却証」をお渡しします。万が一に備え、賠償責任保険にも加入しております。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">初めての利用で不安です。</div>
+        <div class="faq-a">必ず事前打合せを行います(無料・約30分)。ペットちゃんと顔合わせし、お住まいの設備・お食事の量・好み・性格などを丁寧にお伺いいたします。緊急連絡先・かかりつけ動物病院のご確認もこの時に。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">急病の時はどうしてくれますか？</div>
+        <div class="faq-a">直ちに飼い主様または緊急連絡先様にご連絡し、必要に応じてかかりつけ動物病院へお連れします。やむを得ない緊急処置の費用は当店が一旦立て替えます。命を最優先にする「急病・脱走対応マニュアル」も整備しております。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">直前のお願いも可能ですか？</div>
+        <div class="faq-a">通常のご予約は2日前までにお願いしておりますが、飼い主様の事故・入院等の緊急事態の場合は24時間ご相談を承ります(緊急対応割増料金が発生します)。命にかかわるご相談には必ず対応いたします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">お支払いはどうすればよいですか？</div>
+        <div class="faq-a">基本前払い制を採用しております。サービス前日までに銀行振込、または当日ご自宅にて現金をご用意ください。キャッシュレス(クレジットカード・電子マネー)にも対応しております。10回分のご購入で11回ご利用いただける回数券もご用意しております。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">予約はどれくらい前がよいですか？</div>
+        <div class="faq-a">お早めのご予約(2週間以上前)がおすすめです。特に長期・繁忙期(年末年始・GW・夏季)はご予約が混み合います。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">どんなペットに対応していますか？</div>
+        <div class="faq-a">犬・猫・小動物(うさぎ・ハムスター等)・魚(メダカ・金魚)に対応しております。爬虫類・大型鳥類など特殊なペットは事前にご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">ペットホテルは利用できますか？</div>
+        <div class="faq-a">プレミアムペットホテルは現在、新規ご予約の受付を一時休止しております。再開時にはLINE公式アカウントでご案内いたします。既存のご利用者様は引き続きご予約いただけます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-headline">
+      <div class="en">CONTACT</div>
+      <h2>お気軽にご連絡ください。</h2>
+    </div>
+    <p>お見積もり・初回打合せ・各種ご相談は<strong style="color: var(--yellow);">無料</strong>です。</p>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">💬</div>
+        <h4>LINEで相談 (おすすめ)</h4>
+        <div class="val"><a href="https://lin.ee/h2qJiGI" target="_blank" rel="noopener">@aichanpet</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h4>お電話</h4>
+        <div class="val">
+          <a href="tel:08065420012">080-6542-0012</a><br>
+          <span style="font-size: 13px; font-weight: 600; color: var(--gray-text);">TEL: 04-2907-0012</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h4>メール</h4>
+        <div class="val"><a href="mailto:info@aichanpet.example">お問合せフォーム</a></div>
+      </div>
+    </div>
+
+    <div class="contact-sns">
+      <a class="sns-chip" href="https://www.instagram.com/aichanpet/" target="_blank" rel="noopener">📷 @aichanpet</a>
+      <a class="sns-chip" href="https://www.instagram.com/dogsalon_aichan/" target="_blank" rel="noopener">📷 @dogsalon_aichan</a>
+      <a class="sns-chip" href="https://www.instagram.com/rurikokaneda/" target="_blank" rel="noopener">📷 @rurikokaneda</a>
+    </div>
+
+    <p style="margin-top: 36px; font-size: 13px;">受付時間: 9:00〜20:00 (年中無休)</p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">
+    <svg viewBox="0 0 32 32" fill="currentColor" style="width: 28px; height: 28px;"><circle cx="8" cy="11" r="3"/><circle cx="16" cy="8" r="3"/><circle cx="24" cy="11" r="3"/><circle cx="6" cy="20" r="2.5"/><circle cx="26" cy="20" r="2.5"/><ellipse cx="16" cy="22" rx="7" ry="6"/></svg>
+    あいちゃんペット
+  </div>
+  <p>埼玉県入間市 / ペットシッター・タクシー・トリミング・ホテル</p>
+  <div class="footer-links">
+    <a href="#services">サービス</a>
+    <a href="#quote">見積もり</a>
+    <a href="#pricing">料金表</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+  <div class="biz-info">
+    <strong style="color: var(--yellow);">▎店舗情報</strong><br>
+    あいちゃんペット 〜愛情たっぷり〜 / 所在地: 埼玉県入間市 / TEL: 04-2907-0012 / 携帯: 080-6542-0012<br>
+    <strong style="color: var(--yellow);">▎動物取扱業登録</strong><br>
+    埼玉県保第76-0128号 (種別:保管 / 登録2013/3/15 / 有効期限2028/3/14)<br>
+    埼玉県保第76-0342号 (種別:訓練 / 登録2019/3/22 / 有効期限2029/3/21)<br>
+    動物取扱責任者: 金田瑠璃子
+  </div>
+  <p class="copyright">© 2013-2026 aichan pet. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Quote pricing tables (1日1回 基本料金 / 1日2回 基本料金)
+const priceTable = {
+  short: {
+    small_dog: { b1:2500, b2:4400 },
+    medium_dog:{ b1:2500, b2:4400 },
+    large_dog: { b1:2500, b2:4400 },
+    cat:       { b1:2500, b2:4400 },
+    small_animal:{ b1:2500, b2:4400 }
+  },
+  basic: {
+    small_dog: { b1:3300, b2:5500 },
+    medium_dog:{ b1:3850, b2:6000 },
+    large_dog: { b1:4400, b2:8000 },
+    cat:       { b1:3300, b2:5500 },
+    small_animal:{ b1:3300, b2:5500 }
+  },
+  walk: {
+    small_dog: { b1:1980, b2:3300 },
+    medium_dog:{ b1:2200, b2:4070 },
+    large_dog: { b1:2500, b2:4400 },
+    cat:       { b1:1980, b2:3300 },
+    small_animal:{ b1:1980, b2:3300 }
+  }
+};
+const petLabel = {
+  small_dog:"小型犬", medium_dog:"中型犬", large_dog:"大型犬",
+  cat:"猫(2匹まで)", small_animal:"小動物"
+};
+const courseLabel = { short:"ショート", basic:"基本", walk:"お散歩代行" };
+
+let selCourse = "basic";
+let selPet = "medium_dog";
+let selVisits = 1;
+
+function setActive(selector, attr, val) {
+  document.querySelectorAll(selector).forEach(c => c.classList.remove('selected'));
+  document.querySelector(`${selector}[${attr}="${val}"]`).classList.add('selected');
+}
+
+document.querySelectorAll('.course-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    selCourse = chip.dataset.course;
+    setActive('.course-chip','data-course',selCourse);
+    calcQuote();
+  });
+});
+document.querySelectorAll('.pet-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    selPet = chip.dataset.pet;
+    setActive('.pet-chip','data-pet',selPet);
+    calcQuote();
+  });
+});
+document.querySelectorAll('.visit-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    selVisits = parseInt(chip.dataset.visits);
+    setActive('.visit-chip','data-visits',selVisits);
+    calcQuote();
+  });
+});
+
+function calcQuote() {
+  const start = document.getElementById('qStart').value;
+  const end = document.getElementById('qEnd').value;
+  let days = 0;
+  if (start && end) days = Math.max(0, (new Date(end) - new Date(start)) / 86400000 + 1);
+  const peak = document.getElementById('qPeak').checked;
+  const first = document.getElementById('qFirst').checked;
+  const dist = parseFloat(document.getElementById('qDistance').value || 0);
+
+  const p = priceTable[selCourse][selPet];
+  const unit = selVisits === 1 ? p.b1 : p.b2;
+  const sub = unit * days;
+  const peakAmt = peak ? sub * 0.10 : 0;
+  const regFee = first ? 1200 : 0;
+  const transport = dist * 2 * 100 * days;
+  const total = sub + peakAmt + regFee + transport;
+
+  const el = document.getElementById('qTotal');
+  el.classList.remove('flash');
+  el.textContent = '¥' + Math.round(total).toLocaleString();
+  requestAnimationFrame(() => el.classList.add('flash'));
+
+  const bd = document.getElementById('qBreakdown');
+  bd.innerHTML = `
+    <div>${courseLabel[selCourse]} / ${petLabel[selPet]} / 1日${selVisits}回 × ${days}日</div>
+    <div>シッター料金 ¥${sub.toLocaleString()} ${peak?'+ 繁忙期割増 ¥'+Math.round(peakAmt).toLocaleString():''} ${regFee?'+ 初回登録 ¥1,200':''} ${transport?'+ 交通費 ¥'+transport.toLocaleString():''}</div>
+  `;
+}
+
+// Default dates
+const today = new Date();
+document.getElementById('qStart').value = new Date(today.getTime() + 86400000 * 3).toISOString().slice(0,10);
+document.getElementById('qEnd').value = new Date(today.getTime() + 86400000 * 5).toISOString().slice(0,10);
+['qStart','qEnd','qPeak','qFirst','qDistance'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', calcQuote);
+  el.addEventListener('change', calcQuote);
+});
+calcQuote();
+
+// Price table tabs
+document.querySelectorAll('.price-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const id = tab.dataset.tbl;
+    document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.price-table-card').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.price-table-card[data-tbl="${id}"]`).classList.add('active');
+  });
+});
+
+// FAQ
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => item.classList.toggle('open'));
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('navLinks').classList.remove('open');
+    }
+  });
+});
+
+// Fade in
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('section').forEach(el => { el.classList.add('fade-in'); observer.observe(el); });
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+</body>
+</html>
